@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../auth.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  token: string;
+
+  constructor(public auth: AuthService) { }
 
   ngOnInit() {
+    this.auth.accessToken$.subscribe(value => {
+      console.log('Token subscribed');
+      this.token = value;
+    });
+    // this.auth.localAuthSetup();
   }
 
 }
