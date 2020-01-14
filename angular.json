@@ -62,6 +62,9 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "./tsconfig.es5.json"
             }
           }
         },
@@ -73,6 +76,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ng-web-comp-main:build:production"
+            },
+            "es5": {
+              "browserTarget": "ng-web-comp-main:build:es5"
             }
           }
         },
@@ -125,6 +131,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "ng-web-comp-main"
 }
